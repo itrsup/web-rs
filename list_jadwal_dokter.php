@@ -51,7 +51,7 @@ while ($row1 = mysqli_fetch_array($resquery1)) {
                             dokter.nama_dokter,
                             dokter.gelar_belakang
                         FROM
-                            webrs.dokter_spesialis
+                            dokter_spesialis
                         JOIN dokter ON
                             dokter_spesialis.dokter_id = dokter.dokter_id
                         JOIN spesialis ON
@@ -75,7 +75,7 @@ while ($row1 = mysqli_fetch_array($resquery1)) {
                                     jam_selesai,
                                     kuota
                                 FROM
-                                    webrs.dokter_spesialis
+                                    dokter_spesialis
                                 JOIN dokter ON
                                     dokter_spesialis.dokter_id = dokter.dokter_id
                                 JOIN spesialis ON
