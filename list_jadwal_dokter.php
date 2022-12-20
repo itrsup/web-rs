@@ -1,9 +1,9 @@
 <?php
 include "koneksi.php";
 
-if ($_GET['param']!='') {
+if ($_GET['param'] != '') {
     $param = $_GET['param'];
-    $tambahan="and lower(dokter.nama_dokter) like '%$param%' OR lower(nama_spesialis) like '%$param%' ORDER BY nama_spesialis";
+    $tambahan = "and lower(dokter.nama_dokter) like '%$param%' OR lower(nama_spesialis) like '%$param%' ORDER BY nama_spesialis";
 } else {
     $tambahan = "";
 }
@@ -15,18 +15,17 @@ if ($_GET['param']!='') {
 </head>
 <br>
 <?php
-$query1 = "SELECT
-                distinct
-                spesialis.spesialis_id,
+$query1  = "SELECT
+                DISTINCT spesialis.spesialis_id,
                 nama_spesialis
-            from
+            FROM
                 spesialis
-            join dokter_spesialis on
-            spesialis.spesialis_id = dokter_spesialis.spesialis_id
-            join dokter on
-            dokter_spesialis.dokter_id = dokter.dokter_id
-            where
-                1 = 1";
+            JOIN dokter_spesialis ON
+                spesialis.spesialis_id = dokter_spesialis.spesialis_id
+            JOIN dokter ON
+                dokter_spesialis.dokter_id = dokter.dokter_id
+            WHERE 1 = 1
+            $tambahan";
 $resquery1 = mysqli_query($conn, $query1);
 while ($row1 = mysqli_fetch_array($resquery1)) {
 ?>
@@ -45,43 +44,46 @@ while ($row1 = mysqli_fetch_array($resquery1)) {
         <tbody class="bodynih">
             <?php
             $spesialis_id = $row1['spesialis_id'];
-            $query2 = "SELECT
-                                distinct 
-                                dokter.dokter_id, 
-                                nama_spesialis,
-                                dokter.nama_dokter
-                            from
-                                webrs.dokter_spesialis
-                            join dokter on
-                                dokter_spesialis.dokter_id = dokter.dokter_id
-                            join spesialis on
-                                dokter_spesialis.spesialis_id = spesialis.spesialis_id
-                            join jadwal_dokter on
-                                dokter_spesialis.dokter_id = jadwal_dokter.dokter_id 
-                            where spesialis.spesialis_id=$spesialis_id";
+            $query2  = "SELECT
+                            DISTINCT dokter.dokter_id,
+                            nama_spesialis,
+                            dokter.gelar_depan,
+                            dokter.nama_dokter,
+                            dokter.gelar_belakang
+                        FROM
+                            webrs.dokter_spesialis
+                        JOIN dokter ON
+                            dokter_spesialis.dokter_id = dokter.dokter_id
+                        JOIN spesialis ON
+                            dokter_spesialis.spesialis_id = spesialis.spesialis_id
+                        JOIN jadwal_dokter ON
+                            dokter_spesialis.dokter_id = jadwal_dokter.dokter_id
+                        WHERE
+                            spesialis.spesialis_id = $spesialis_id
+                            $tambahan";
             $resquery2 = mysqli_query($conn, $query2);
             while ($row2 = mysqli_fetch_array($resquery2)) {
                 $dokter_id = $row2['dokter_id'];
             ?>
                 <tr>
-                    <td width="20%"><?php echo $row2['nama_dokter'] ?></td>
+                    <td width="20%"><?php echo $row2['gelar_depan']." ".$row2['nama_dokter']." ".$row2['gelar_belakang']; ?></td>
                     <?php
-
-                    $query3 = "SELECT
-                                    distinct
-                                        dokter.dokter_id, 
-                                        hari,
-                                        jam_mulai,
-                                        jam_selesai,
-                                        kuota
-                                    from
-                                        webrs.dokter_spesialis
-                                    join dokter on
-                                        dokter_spesialis.dokter_id = dokter.dokter_id
-                                    join spesialis on
-                                        dokter_spesialis.spesialis_id = spesialis.spesialis_id
-                                    join jadwal_dokter on
-                                        dokter_spesialis.dokter_id = jadwal_dokter.dokter_id where dokter.dokter_id=$dokter_id";
+                    $query3  = "SELECT
+                                    DISTINCT dokter.dokter_id,
+                                    hari,
+                                    jam_mulai,
+                                    jam_selesai,
+                                    kuota
+                                FROM
+                                    webrs.dokter_spesialis
+                                JOIN dokter ON
+                                    dokter_spesialis.dokter_id = dokter.dokter_id
+                                JOIN spesialis ON
+                                    dokter_spesialis.spesialis_id = spesialis.spesialis_id
+                                JOIN jadwal_dokter ON
+                                    dokter_spesialis.dokter_id = jadwal_dokter.dokter_id
+                                WHERE
+                                    dokter.dokter_id = $dokter_id";
                     $resquery3 = mysqli_query($conn, $query3);
                     while ($row3 = mysqli_fetch_array($resquery3)) {
                         $dokter_id = $row3['dokter_id'];
