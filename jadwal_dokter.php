@@ -156,6 +156,7 @@ include "koneksi.php";
                 xmlhttp.open("GET", "list_jadwal_dokter.php?param=" + str, true);
                 xmlhttp.send();
             }
+            showdokter();
         </script>
 
 
