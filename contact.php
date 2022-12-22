@@ -27,16 +27,20 @@ include 'koneksi.php';
 </head>
 
 <body>
-    <header id="header" class="d-flex align-items-center">
+<header id="header" class="d-flex align-items-center">
         <div class="container d-flex justify-content-between">
 
             <div class="logo">
-                <img src="assets/img/icon.png"> RS Umum Pekerja
+                <img src="assets/img/icon.png">
+                <img src="assets/img/KBNGRAHAMEDICA.png">
+                <img src="assets/img/pelni.png">
+                <img src="assets/img/bumn.png">
+                <img src="assets/img/ihc.png">
+                <strong>RS UMUM PEKERJA</strong>
             </div>
-
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="active" href="index.php">Branda</a></li>
+                    <li><a class="active" href="index.php">Beranda</a></li>
                     <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="tentang_kami.php">Tentang Kami</a></li>
@@ -120,16 +124,16 @@ include 'koneksi.php';
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <p>Nama Lengkap</p>
-                                    <input type="text" name="name" class="form-control" id="nama">
+                                    <input type="text" name="name_kontak" class="form-control">
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <p>Email</p>
-                                    <input type="email" class="form-control" name="email" id="email">
+                                    <input type="email" class="form-control" name="email">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <p>Kendala</p>
-                                <textarea class="form-control" name="message" rows="5"></textarea>
+                                <textarea class="form-control" name="kendala_kontak" rows="5"></textarea>
                             </div>
                             <br>
                             <div class="text-center"><button type="submit" name="insert">Send</button></div>

@@ -8,7 +8,7 @@ if (isset($_POST['insert'])) {
     $dskripsi = $_POST['deskripsi'];
     $sql = "INSERT INTO brita (nama_brita,deskripsi)
     VALUES ('$nama_brita','$dskripsi')";
-    $conn->query($sql);
+    
 
     $target_dir = "brita/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
