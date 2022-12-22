@@ -40,17 +40,25 @@
               <li><a href="sambutan_kepala_rumahsakit.php">Sambutan Kepala Rumah Sakit</a></li>
               <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
               <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
-              <li><a href="karir.php">Karir</a></li>
             </ul>
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
               <li><a href="rawat_inap.php">Rawat Inap</a></li>
               <li><a href="medical_checkup.php">Medical Check Up</a></li>
+              <li><a href="#">IGD</a></li>
+              <li><a href="#">ICU</a></li>
+              <li><a href="#">Hemodialisa</a></li>
+              <li><a href="#">Radiologi</a></li>
+              <li><a href="#">Laboratorium</a></li>
+              <li><a href="#">Kamar Bedah</a></li>
+              <li><a href="#">Kamar Operasi</a></li>
             </ul>
           </li>
           <li><a href="medical_checkup.php">Medical Check Up</a></li>
           <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
+          <li><a href="karir.php">Karir</a></li>
+          <li><a href="contact.php">Kontak</a></li>
           <!-- <li><a href="brita.php">Berita</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -112,6 +120,7 @@
               Jl. Tipar Cakung No.46, RT.2/RW.1, Sukapura, Kec. Cilincing, Kota Jkt Utara. <br>
               <strong>Call Center :</strong> 021-29484848<br>
             </p>
+            <p style="color:black;"> Nomer SPGDT : 081-1827003</p>
           </div>
 
           <div class="col-lg-1 col-md-5 footer-links">

@@ -43,17 +43,25 @@ include 'koneksi.php';
               <li><a href="sambutan_kepala_rumahsakit.php">Sambutan Kepala Rumah Sakit</a></li>
               <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
               <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
-              <li><a href="karir.php">Karir</a></li>
             </ul>
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
               <li><a href="rawat_inap.php">Rawat Inap</a></li>
               <li><a href="medical_checkup.php">Medical Check Up</a></li>
+              <li><a href="#">IGD</a></li>
+              <li><a href="#">ICU</a></li>
+              <li><a href="#">Hemodialisa</a></li>
+              <li><a href="#">Radiologi</a></li>
+              <li><a href="#">Laboratorium</a></li>
+              <li><a href="#">Kamar Bedah</a></li>
+              <li><a href="#">Kamar Operasi</a></li>
             </ul>
           </li>
           <li><a href="medical_checkup.php">Medical Check Up</a></li>
           <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
+          <li><a href="karir.php">Karir</a></li>
+          <li><a href="contact.php">Kontak</a></li>
           <!-- <li><a href="brita.php">Berita</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -136,54 +144,55 @@ include 'koneksi.php';
 
     <footer id="footer">
 
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3 style="color:black;">RS UMUM PEKERJA</h3>
-                        <p style="color:black;">
-                            Jl. Tipar Cakung No.46, RT.2/RW.1, Sukapura, Kec. Cilincing, Kota Jkt Utara. <br>
-                            <strong>Call Center :</strong> 021-29484848<br>
-                        </p>
-                    </div>
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3 style="color:black;">RS UMUM PEKERJA</h3>
+            <p style="color:black;">
+              Jl. Tipar Cakung No.46, RT.2/RW.1, Sukapura, Kec. Cilincing, Kota Jkt Utara. <br>
+              <strong>Call Center :</strong> 021-29484848<br>
+            </p>
+            <p style="color:black;"> Nomer SPGDT : 081-1827003</p>
+          </div>
 
-                    <div class="col-lg-1 col-md-5 footer-links">
-                        <ul>
-                            <h4 style="color:black;">TENTANG</h4>
-                            <!-- <a href="#" style="color:black;">KORPORASI</a><br> -->
-                            <a href="karir.php" style="color:black;">KARIR</a><br>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4 style="color:black;">SOSIAL MEDIA</h4>
-                        <ul>
-                            <a href="#" class="twitter" style="color:black;"><i class="bx bxl-twitter"></i> Twitter</a><br>
-                            <a href="#" class="facebook" style="color:black;"><i class="bx bxl-facebook"></i>Facebook</a><br>
-                            <a href="#" class="instagram" style="color:black;"><i class="bx bxl-instagram"></i>Instagram</a>
-                        </ul>
-                    </div>
+          <div class="col-lg-1 col-md-5 footer-links">
+            <ul>
+              <h4 style="color:black;">TENTANG</h4>
+              <!-- <a href="#" style="color:black;">KORPORASI</a><br> -->
+              <a href="karir.php" style="color:black;">KARIR</a><br>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4 style="color:black;">SOSIAL MEDIA</h4>
+            <ul>
+              <a href="#" class="twitter" style="color:black;"><i class="bx bxl-twitter"></i> Twitter</a><br>
+              <a href="#" class="facebook" style="color:black;"><i class="bx bxl-facebook"></i>Facebook</a><br>
+              <a href="#" class="instagram" style="color:black;"><i class="bx bxl-instagram"></i>Instagram</a>
+            </ul>
+          </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter text-center">
-                        <h4 style="color:black;">PENGHARGAAN</h4>
-                        <img src="assets/img/kars.png" width="100" height="80"><br>
-                        <h8 style="color:black;">Akreditasi KARS</h8><br>
-                        <h8 style="color:black;">Paripurna</h8>
-                    </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter text-center">
+            <h4 style="color:black;">PENGHARGAAN</h4>
+            <img src="assets/img/kars.png" width="100" height="80"><br>
+            <h8 style="color:black;">Akreditasi KARS</h8><br>
+            <h8 style="color:black;">Paripurna</h8>
+          </div>
 
-                </div>
-            </div>
         </div>
+      </div>
+    </div>
 
-        <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-4">
 
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>RS Umum Pekerja 2021</span></strong>.
-                </div>
-            </div>
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>RS Umum Pekerja 2021</span></strong>.
         </div>
-    </footer><!-- End Footer -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
