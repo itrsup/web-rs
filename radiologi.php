@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,7 @@
 </head>
 
 <body>
-<header id="header" class="d-flex align-items-center">
+    <header id="header" class="d-flex align-items-center">
         <div class="container d-flex justify-content-between">
 
             <div class="logo">
@@ -58,7 +61,6 @@
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">Promo</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>
@@ -71,41 +73,71 @@
     </header>
 
     <main id="main">
-        <section id="contact" class="contact">
+        <br>
+        <section id="features" class="features">
             <div class="container">
                 <section id="cta-pricing" class="cta-pricing">
                     <div class="container">
                         <div class="text-center">
-                            <h3><strong>PASIEN DAN PENGUNJUNG</strong></h3>
+                            <h3><strong>Layanan Radiologi</strong></h3>
                         </div>
                     </div>
                 </section>
-                <div class="row  justify-content-center" data-aos="fade-up">
-                    <div class="col-lg-10">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <p>Pengunjung & Pendamping Pasien yang terhormat,</p>
-                            <br>
-                            <p>Demi pemulihan kesehatan pasien, kebersihan, kenyamanan, ketenangan dan keamanan kita bersama, kami sampaikan beberapa hal yang perlu ditaati sebagai berikut :</p>
-                            <h6>Waktu Berkunjung Pasien</h6>
-                            <h6>Saat ini ditiadakan sampai waktu yang ditentukan</h6>
-                            <br>
-                            <p>Pengunjung pasien tidak diperkenankan membawa anak-anak dibawah usia 12 tahun. Pengunjung & Pendamping pasien dilarang membawa:</p>
-                            <p>Barang-barang berharga dan perlengkapan tidur (bantal,guling, selimut, tikar, karpet, dll) perlengkapan memasak, barang-barang elektronik (tape recorder,radio, televisi, dll) yang dapat mengganggu ketenangan pasien Pengunjung & Pendamping pasien dimohon untuk menjaga kebersihan, ketenangan dan kenyamanan di lingkungan RS Umum Pekera. RS Umum Pekerja tidak bertanggung jawab atas kehilangan dan kelalaian Pengunjung dan Pendamping Pasien Pengunjung & Pendamping pasien dilarang untuk menyentuh, mengubah dan memindahkan perlengkapan/peralatan medis/non medis yang ada diruang perawatan pasien. Untuk peraturan Pengunjung dan pendamping adalah sebagai berikut : </p>
-                            <h6>Kamar Perawatan :</h6>
-                            <ul>
-                                <li>Didampingi oleh 1 Orang yang ditunjuk oleh keluarga pasien </li>
-                                <li>Dikunjungi oleh 2 orang Pengunjung </li>
-                            </ul>
-                            <p>Pengunjung/Pendamping WAJIB menggunakan kartu Pengunjung/Pendamping yang diperoleh di bagian pendaftaran (Admision) Loby lantai 1. Khusus untuk pasien-pasien yang dirawat di ICU / ICCU /HCU/ NICU / PICU, keluarga / penunggu pasien menunggu di ruang khusus yang telah disediakan oleh Rumah Sakit. Bilamana ada hal-hal yang diperlukan, petugas / perawat akan menghubungi keluarga / Pendamping pasien. Guna mempercepat proses pemulihan kesehatan pasien, pengunjung pasien di ICU / ICCU / HCU / NICU / PICU dibatasi hanya pada jam berkunjung yang telah ditentukan dan pembatasan pengunjung pasien maksimal 2 (dua) orang untuk satu kali masuk. Keluarga / Pendamping pasien dilarang untuk tidur ditempat tidur kosong yang ada diruang perawatan. Tanda pengenal penunggu pasien wajib dikembalikan pada saat proses administrasi kepulangan pasien. </p>
-                            <p>Atas perhatian, untuk dapat mentaati tata tertib ini, serta kepercayaan yang telah anda berikan kepada kami untuk merawat keluarga anda, kami ucapkan terima kasih.</p>
-                        </form>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
+                        <ul class="nav nav-tabs flex-column">
+                            <?php
+                            $query = mysqli_query($conn, "SELECT * FROM layanan_radiologi");
+                            $i = 0;
+                            while ($row = mysqli_fetch_array($query)) {
+                                $i++;
+                            ?>
+                                <li class="nav-item mb-2">
+                                    <a class="nav-link <?php echo ($i == 1 ? "active" : "") ?> show" data-bs-toggle="tab" href="#tab-<?php echo $i ?>">
+                                        <h4><?php echo $row['nama_radiologi'] ?></h4>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
-
+                    <div class="col-lg-7 ml-auto" data-aos="fade-left" data-aos-delay="100">
+                        <div class="tab-content">
+                            <?php
+                            $query = mysqli_query(
+                                $conn,
+                                "SELECT * FROM layanan_radiologi"
+                            );
+                            $i = 0;
+                            while ($row = mysqli_fetch_array($query)) {
+                                $layanan_id = $row['layanan_id'];
+                                $i++;
+                            ?>
+                                <div class="tab-pane <?php echo ($i == 1 ? "active" : "") ?> show" id="tab-<?php echo $i ?>">
+                                    <figure>
+                                        <img src="radiologi/<?php echo $row['file'] ?>" width="600px" height="400px">
+                                        <h5><?php echo $row['nama_radiologi'] ?></h5><br>
+                                        <br>
+                                        <div>
+                                            <h6><strong>Deskripsi</strong></h6>
+                                            <p><?php echo $row['deskripsi']?></p>
+                                        </div>
+                                    </figure>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <section id="cta-pricing" class="cta-pricing">
+                        <div class="container">
+                            <div class="text-center">
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
             </div>
-        </section><!-- End Contact Section -->
 
+        </section><!-- End Features Section -->
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

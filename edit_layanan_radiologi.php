@@ -1,10 +1,10 @@
 <?php
 include "koneksi.php";
 
-$data = mysqli_query($conn, "SELECT * FROM layanan_rawat_jalan WHERE layanan_id = '" . $_GET['id'] . "'");
+$data = mysqli_query($conn, "SELECT * FROM layanan_radiologi WHERE layanan_id = '" . $_GET['id'] . "'");
 $kodok = mysqli_fetch_array($data);
 
-$nama = $kodok['nama_klinik'];
+$nama = $kodok['nama_radiologi'];
 $file = $kodok['file'];
 $deskripsi = $kodok['deskripsi'];
 
@@ -88,18 +88,18 @@ $deskripsi = $kodok['deskripsi'];
                 <div class="row mt-5 justify-content-center" data-aos="fade-up">
                     <div class="col-lg-10">
                         <H4>Layanan</H4>
-                        <form action="layanan_rawat_jalan_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
+                        <form action="layanan_radiologi_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
                             <input type="hidden" name="layanan_id" value="<?php echo $_GET['id'] ?>">
                             <p>Nama layanan</p>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="nama_klinik" value="<?php echo $nama ?>">
+                                <input type="text" class="form-control" name="nama_radiologi" value="<?php echo $nama ?>">
                             </div>
                             <p>Upload File</p>
                             <div class="form-group mt-3">
                                 <input type="file" class="form-control" name="file" onchange="loadingsih()">
                             </div>
                             <div class="form-group mt-3">
-                                <img src="foto2/<?php echo $file ?>" width="150px" height="100px">
+                                <img src="radiologi/<?php echo $file ?>" width="150px" height="100px">
                             </div>
                             <p>Deskripsi</p>
                             <div class="form-group mt-3">

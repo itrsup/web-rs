@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,46 +73,29 @@
         </div>
     </header>
 
-    <main id="main">
-        <section id="contact" class="contact">
-            <div class="container">
-                <section id="cta-pricing" class="cta-pricing">
-                    <div class="container">
-                        <div class="text-center">
-                            <h3><strong>PASIEN DAN PENGUNJUNG</strong></h3>
-                        </div>
-                    </div>
-                </section>
-                <div class="row  justify-content-center" data-aos="fade-up">
-                    <div class="col-lg-10">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <p>Pengunjung & Pendamping Pasien yang terhormat,</p>
-                            <br>
-                            <p>Demi pemulihan kesehatan pasien, kebersihan, kenyamanan, ketenangan dan keamanan kita bersama, kami sampaikan beberapa hal yang perlu ditaati sebagai berikut :</p>
-                            <h6>Waktu Berkunjung Pasien</h6>
-                            <h6>Saat ini ditiadakan sampai waktu yang ditentukan</h6>
-                            <br>
-                            <p>Pengunjung pasien tidak diperkenankan membawa anak-anak dibawah usia 12 tahun. Pengunjung & Pendamping pasien dilarang membawa:</p>
-                            <p>Barang-barang berharga dan perlengkapan tidur (bantal,guling, selimut, tikar, karpet, dll) perlengkapan memasak, barang-barang elektronik (tape recorder,radio, televisi, dll) yang dapat mengganggu ketenangan pasien Pengunjung & Pendamping pasien dimohon untuk menjaga kebersihan, ketenangan dan kenyamanan di lingkungan RS Umum Pekera. RS Umum Pekerja tidak bertanggung jawab atas kehilangan dan kelalaian Pengunjung dan Pendamping Pasien Pengunjung & Pendamping pasien dilarang untuk menyentuh, mengubah dan memindahkan perlengkapan/peralatan medis/non medis yang ada diruang perawatan pasien. Untuk peraturan Pengunjung dan pendamping adalah sebagai berikut : </p>
-                            <h6>Kamar Perawatan :</h6>
-                            <ul>
-                                <li>Didampingi oleh 1 Orang yang ditunjuk oleh keluarga pasien </li>
-                                <li>Dikunjungi oleh 2 orang Pengunjung </li>
-                            </ul>
-                            <p>Pengunjung/Pendamping WAJIB menggunakan kartu Pengunjung/Pendamping yang diperoleh di bagian pendaftaran (Admision) Loby lantai 1. Khusus untuk pasien-pasien yang dirawat di ICU / ICCU /HCU/ NICU / PICU, keluarga / penunggu pasien menunggu di ruang khusus yang telah disediakan oleh Rumah Sakit. Bilamana ada hal-hal yang diperlukan, petugas / perawat akan menghubungi keluarga / Pendamping pasien. Guna mempercepat proses pemulihan kesehatan pasien, pengunjung pasien di ICU / ICCU / HCU / NICU / PICU dibatasi hanya pada jam berkunjung yang telah ditentukan dan pembatasan pengunjung pasien maksimal 2 (dua) orang untuk satu kali masuk. Keluarga / Pendamping pasien dilarang untuk tidur ditempat tidur kosong yang ada diruang perawatan. Tanda pengenal penunggu pasien wajib dikembalikan pada saat proses administrasi kepulangan pasien. </p>
-                            <p>Atas perhatian, untuk dapat mentaati tata tertib ini, serta kepercayaan yang telah anda berikan kepada kami untuk merawat keluarga anda, kami ucapkan terima kasih.</p>
-                        </form>
-                    </div>
-
-                </div>
-
+  <main id="main">
+    <br>
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="row portfolio-container" data-aos="fade-up">
+          <?php
+          $query = mysqli_query($conn, "SELECT * FROM promo");
+          $i = 0;
+          while ($row = mysqli_fetch_array($query)) {
+            $i++;
+          ?>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="promo/<?php echo $row['file'] ?>" class="img-fluid portfolio-lightbox preview-link" alt="">
             </div>
-        </section><!-- End Contact Section -->
+          <?php } ?>
+        </div>
+      </div>
+    </section>
 
-    </main><!-- End #main -->
+  </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
     <div class="footer-top">
       <div class="container">
@@ -161,19 +147,19 @@
     </div>
   </footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 </body>
 

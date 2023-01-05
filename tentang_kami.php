@@ -2,24 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>RS Umum Pekerja</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>RS Umum Pekerja</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <link href="assets/img/icon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/img/icon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,16 +49,16 @@
                             <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
                             <li><a href="rawat_inap.php">Rawat Inap</a></li>
                             <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                            <li><a href="#">IGD</a></li>
+                            <li><a href="igd.php">IGD</a></li>
                             <li><a href="#">ICU</a></li>
-                            <li><a href="#">Hemodialisa</a></li>
-                            <li><a href="#">Radiologi</a></li>
-                            <li><a href="#">Laboratorium</a></li>
-                            <li><a href="#">Kamar Bedah</a></li>
-                            <li><a href="#">Kamar Operasi</a></li>
+                            <li><a href="hemodialisa.php">Hemodialisa</a></li>
+                            <li><a href="radiologi.php">Radiologi</a></li>
+                            <li><a href="laboratorium.php">Laboratorium</a></li>
+                            <li><a href="kamarbedah.php">Kamar Bedah</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
+                    <li><a href="promo.php">Promo</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>

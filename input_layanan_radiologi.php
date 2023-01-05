@@ -1,12 +1,5 @@
 <?php
 include "koneksi.php";
-
-$data = mysqli_query($conn, "SELECT * FROM layanan_rawat_inap WHERE layanan_id = '" . $_GET['id'] . "'");
-$kodok = mysqli_fetch_array($data);
-
-$nama = $kodok['nama_layanan'];
-$file = $kodok['file'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,21 +79,52 @@ $file = $kodok['file'];
       <div class="container">
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
-            <H4>Layanan</H4>
-            <form action="layanan_rawat_inap_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
-              <input type="hidden" name="layanan_id" value="<?php echo $_GET['id'] ?>">
+            <H4>Layanan radiologi</H4>
+            <form action="layanan_radiologi_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
               <p>Nama layanan</p>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="nama_layanan" value="<?php echo $nama ?>">
+                <input type="text" class="form-control" name="nama_radiologi">
               </div>
               <p>Upload File</p>
               <div class="form-group mt-3">
-                <input type="file" class="form-control" name="file" onchange="loadingsih()">
+                <input type="file" class="form-control" name="file">
               </div>
+              <p>deskripsi</p>
               <div class="form-group mt-3">
-                <img src="foto/<?php echo $file ?>" width="150px" height="100px">
+                <textarea name="deskripsi" class="form-control"></textarea>
               </div>
-              <div class="text-center"><button type="submit" name="update">upload</button></div>
+              <div class="text-center"><button type="submit" name="insert">upload</button></div>
+              <br>
+              <div class="mt-5">
+                <table id="example" class="display cell-border" style="width:100%">
+                  <thead>
+                    <?php
+                    $query = mysqli_query($conn, "SELECT * FROM layanan_radiologi");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                      <tr>
+                        <th>id layanan</th>
+                        <th>Nama radiologi</th>
+                        <th>foto</th>
+                        <th>deskripsi</th>
+                        <th>action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $row['layanan_id'] ?></td>
+                      <td><?php echo $row['nama_radiologi'] ?></td>
+                      <td><img src="radiologi/<?php echo $row['file'] ?>" width="150px" height="100px"></td>
+                      <td><?php echo $row['deskripsi'] ?></td>
+                      <td>
+                        <a href="edit_layanan_radiologi.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-primary">Edit</a>
+                        <a href="layanan_radiologi_act.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-danger">Hapus</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                <?php } ?>
+                </table>
+              </div>
             </form>
           </div>
         </div>
@@ -108,39 +132,6 @@ $file = $kodok['file'];
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-body text-center">
-        <div class="spinner-grow text-primary" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-secondary" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-success" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-danger" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-warning" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-info" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-light" role="status">
-          <span class="sr-only"></span>
-        </div>
-        <div class="spinner-grow text-dark" role="status">
-          <span class="sr-only"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -157,17 +148,6 @@ $file = $kodok['file'];
     $(document).ready(function() {
       $('#example').DataTable();
     });
-
-    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
-      keyboard: false
-    });
-
-    function loadingsih() {
-      myModal.show();
-      setTimeout(function(){
-        myModal.hide();
-      }, 5000);
-    }
   </script>
 
   <!-- Template Main JS File -->

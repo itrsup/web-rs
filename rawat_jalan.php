@@ -13,7 +13,6 @@ include "koneksi.php";
     <meta content="" name="keywords">
 
     <link href="assets/img/icon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -28,47 +27,51 @@ include "koneksi.php";
 
 <body>
 <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between">
 
-      <div class="logo">
-        <img src="assets/img/icon.png"> RS Umum Pekerja
-      </div>
+            <div class="logo">
+                <img src="assets/img/icon.png">
+                <img src="assets/img/KBNGRAHAMEDICA.png">
+                <img src="assets/img/pelni.png">
+                <img src="assets/img/bumn.png">
+                <img src="assets/img/ihc.png">
+                <strong>RS UMUM PEKERJA</strong>
+            </div>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="active" href="index.php">Beranda</a></li>
+                    <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="tentang_kami.php">Tentang Kami</a></li>
+                            <li><a href="sambutan_kepala_rumahsakit.php">Sambutan Kepala Rumah Sakit</a></li>
+                            <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
+                            <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
+                        </ul>
+                    <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
+                            <li><a href="rawat_inap.php">Rawat Inap</a></li>
+                            <li><a href="medical_checkup.php">Medical Check Up</a></li>
+                            <li><a href="igd.php">IGD</a></li>
+                            <li><a href="#">ICU</a></li>
+                            <li><a href="hemodialisa.php">Hemodialisa</a></li>
+                            <li><a href="radiologi.php">Radiologi</a></li>
+                            <li><a href="laboratorium.php">Laboratorium</a></li>
+                            <li><a href="kamarbedah.php">Kamar Bedah</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="medical_checkup.php">Medical Check Up</a></li>
+                    <li><a href="promo.php">Promo</a></li>
+                    <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
+                    <li><a href="karir.php">Karir</a></li>
+                    <li><a href="contact.php">Kontak</a></li>
+                    <!-- <li><a href="brita.php">Berita</a></li> -->
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="active" href="index.php">Branda</a></li>
-          <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="tentang_kami.php">Tentang Kami</a></li>
-              <li><a href="sambutan_kepala_rumahsakit.php">Sambutan Kepala Rumah Sakit</a></li>
-              <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
-              <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
-            </ul>
-          <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
-              <li><a href="rawat_inap.php">Rawat Inap</a></li>
-              <li><a href="medical_checkup.php">Medical Check Up</a></li>
-              <li><a href="#">IGD</a></li>
-              <li><a href="#">ICU</a></li>
-              <li><a href="#">Hemodialisa</a></li>
-              <li><a href="#">Radiologi</a></li>
-              <li><a href="#">Laboratorium</a></li>
-              <li><a href="#">Kamar Bedah</a></li>
-              <li><a href="#">Kamar Operasi</a></li>
-            </ul>
-          </li>
-          <li><a href="medical_checkup.php">Medical Check Up</a></li>
-          <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
-          <li><a href="karir.php">Karir</a></li>
-          <li><a href="contact.php">Kontak</a></li>
-          <!-- <li><a href="brita.php">Berita</a></li> -->
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header>
+        </div>
+    </header>
 
     <main id="main">
         <br>
@@ -113,7 +116,7 @@ include "koneksi.php";
                             ?>
                                 <div class="tab-pane <?php echo ($i == 1 ? "active" : "") ?> show" id="tab-<?php echo $i ?>">
                                     <figure>
-                                        <img src="foto2/<?php echo $row['file'] ?>" width="800px" height="400px">
+                                        <img src="foto2/<?php echo $row['file'] ?>" width="600px" height="400px">
                                         <h5><?php echo $row['nama_klinik'] ?></h5><br>
                                         <br>
                                         <div>
