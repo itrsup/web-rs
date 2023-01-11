@@ -55,10 +55,11 @@
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
                             <li><a href="kamarbedah.php">Kamar Bedah</a></li>
+                            <li><a href="perina.php">perinatologi</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">Promo</a></li>
+                    <li><a href="promo.php">layanan</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>
@@ -136,6 +137,13 @@
               <div class="icon"><i class="bi bi-activity"></i></div>
               <h4 class="title"><a href="#">icu</a></h4>
               <p class="description">menginput fasilitas yang ada di ICU</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-activity"></i></div>
+              <h4 class="title"><a href="input_layanan_perina.php">perinatologi</a></h4>
+              <p class="description">menginput fasilitas yang ada di perina</p>
             </div>
           </div>
         </div>

@@ -58,11 +58,11 @@ include "koneksi.php";
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
                             <li><a href="kamarbedah.php">Kamar Bedah</a></li>
-                            <li><a href="perina.php">perinatologi</a></li>
+                            <li><a href="perina.php">Perinatologi</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">layanan</a></li>
+                    <li><a href="promo.php">Promo</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>
@@ -73,52 +73,56 @@ include "koneksi.php";
 
         </div>
     </header>
-
   <main id="main">
 
     <section id="contact" class="contact">
       <div class="container">
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
-            <H4>Layanan Rawat inap</H4>
-            <form action="layanan_rawat_inap_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
-              <p>Nama Kelas</p>
+            <H4>Layanan perina</H4>
+            <form action="layanan_perina_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
+              <p>Nama layanan</p>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="nama_layanan">
+                <input type="text" class="form-control" name="nama_perina">
               </div>
               <p>Upload File</p>
               <div class="form-group mt-3">
                 <input type="file" class="form-control" name="file">
+              </div>
+              <p>deskripsi</p>
+              <div class="form-group mt-3">
+                <textarea name="deskripsi" class="form-control"></textarea>
               </div>
               <div class="text-center"><button type="submit" name="insert">upload</button></div>
               <br>
               <div class="mt-5">
                 <table id="example" class="display cell-border" style="width:100%">
                   <thead>
-                    <tr>
-                      <th>id layanan</th>
-                      <th>Nama kelas</th>
-                      <th>Gambar</th>
-                      <th>action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
                     <?php
-                    $query = mysqli_query($conn, "SELECT * FROM layanan_rawat_inap");
+                    $query = mysqli_query($conn, "SELECT * FROM layanan_perina");
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                       <tr>
-                        <td><?php echo $row['layanan_id'] ?></td>
-                        <td><?php echo $row['nama_layanan'] ?></td>
-                        <td><img src="foto/<?php echo $row['file'] ?>" width="150px" height="100px"></td>
-                        <td>
-                          <a href="edit_layanan_rawat_inap.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-primary">Edit</a>
-                          <a href="layanan_rawat_inap_act.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-danger">Hapus</a>
-                          <a href="mapping_fasilitas.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-success">Fasilitas</a>
-                        </td>
+                        <th>id layanan</th>
+                        <th>Nama laboratorium</th>
+                        <th>foto</th>
+                        <th>deskripsi</th>
+                        <th>action</th>
                       </tr>
-                    <?php } ?>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $row['layanan_id'] ?></td>
+                      <td><?php echo $row['nama_perina'] ?></td>
+                      <td><img src="perina/<?php echo $row['file'] ?>" width="150px" height="100px"></td>
+                      <td><?php echo $row['deskripsi'] ?></td>
+                      <td>
+                        <a href="edit_layanan_perina.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-primary">Edit</a>
+                        <a href="layanan_perina_act.php?id=<?php echo $row['layanan_id'] ?>" class="btn btn-danger">Hapus</a>
+                      </td>
+                    </tr>
                   </tbody>
+                <?php } ?>
                 </table>
               </div>
             </form>

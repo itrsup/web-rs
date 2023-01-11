@@ -10,7 +10,8 @@ include "koneksi.php";
 
     <title>RS Umum Pekerja</title>
     <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="" 
+    name="keywords">
 
     <link href="assets/img/icon.png" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -58,10 +59,11 @@ include "koneksi.php";
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
                             <li><a href="kamarbedah.php">Kamar Bedah</a></li>
+                            <li><a href="perina.php">perinatologi</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">Promo</a></li>
+                    <li><a href="promo.php">layanan</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>

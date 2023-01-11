@@ -26,7 +26,7 @@ include "koneksi.php";
 </head>
 
 <body>
-<header id="header" class="d-flex align-items-center">
+    <header id="header" class="d-flex align-items-center">
         <div class="container d-flex justify-content-between">
 
             <div class="logo">
@@ -58,11 +58,10 @@ include "koneksi.php";
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
                             <li><a href="kamarbedah.php">Kamar Bedah</a></li>
-                            <li><a href="perina.php">perinatologi</a></li>
+                            <li><a href="perina.php">Perinatologi</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">layanan</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>
@@ -81,7 +80,7 @@ include "koneksi.php";
                 <section id="cta-pricing" class="cta-pricing">
                     <div class="container">
                         <div class="text-center">
-                            <h3><strong>Layanan igd</strong></h3>
+                            <h3><strong>Layanan Perina</strong></h3>
                         </div>
                     </div>
                 </section>
@@ -90,14 +89,14 @@ include "koneksi.php";
                     <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
                         <ul class="nav nav-tabs flex-column">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM layanan_igd");
+                            $query = mysqli_query($conn, "SELECT * FROM layanan_perina");
                             $i = 0;
                             while ($row = mysqli_fetch_array($query)) {
                                 $i++;
                             ?>
                                 <li class="nav-item mb-2">
                                     <a class="nav-link <?php echo ($i == 1 ? "active" : "") ?> show" data-bs-toggle="tab" href="#tab-<?php echo $i ?>">
-                                        <h4><?php echo $row['nama_igd'] ?></h4>
+                                        <h4><?php echo $row['nama_perina'] ?></h4>
                                     </a>
                                 </li>
                             <?php } ?>
@@ -108,7 +107,7 @@ include "koneksi.php";
                             <?php
                             $query = mysqli_query(
                                 $conn,
-                                "SELECT * FROM layanan_igd"
+                                "SELECT * FROM layanan_perina"
                             );
                             $i = 0;
                             while ($row = mysqli_fetch_array($query)) {
@@ -117,8 +116,8 @@ include "koneksi.php";
                             ?>
                                 <div class="tab-pane <?php echo ($i == 1 ? "active" : "") ?> show" id="tab-<?php echo $i ?>">
                                     <figure>
-                                        <img src="igd/<?php echo $row['file'] ?>" width="600px" height="400px">
-                                        <h5><?php echo $row['nama_igd'] ?></h5><br>
+                                        <img src="perina/<?php echo $row['file'] ?>" width="600px" height="400px">
+                                        <h5><?php echo $row['nama_perina'] ?></h5><br>
                                         <br>
                                         <div>
                                             <h6><strong>Deskripsi</strong></h6>

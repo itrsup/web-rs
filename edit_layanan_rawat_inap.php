@@ -65,10 +65,11 @@ $file = $kodok['file'];
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
                             <li><a href="kamarbedah.php">Kamar Bedah</a></li>
+                            <li><a href="perina.php">perinatologi</a></li>
                         </ul>
                     </li>
                     <li><a href="medical_checkup.php">Medical Check Up</a></li>
-                    <li><a href="promo.php">Promo</a></li>
+                    <li><a href="promo.php">layanan</a></li>
                     <li><a href="jadwal_dokter.php">Jadwal Dokter</a></li>
                     <li><a href="karir.php">Karir</a></li>
                     <li><a href="contact.php">Kontak</a></li>
