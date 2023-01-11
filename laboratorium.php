@@ -118,7 +118,7 @@ include "koneksi.php";
                                 <div class="tab-pane <?php echo ($i == 1 ? "active" : "") ?> show" id="tab-<?php echo $i ?>">
                                     <figure>
                                         <img src="laboratorium/<?php echo $row['file'] ?>" width="600px" height="400px">
-                                        <h5><?php echo $row['nama_radiologi'] ?></h5><br>
+                                        <h5><?php echo $row['nama_laboratorium'] ?></h5><br>
                                         <br>
                                         <div>
                                             <h6><strong>Deskripsi</strong></h6>
