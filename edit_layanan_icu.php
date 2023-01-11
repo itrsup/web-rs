@@ -1,5 +1,13 @@
 <?php
 include "koneksi.php";
+
+$data = mysqli_query($conn, "SELECT * FROM layanan_icu WHERE layanan_id = '" . $_GET['id'] . "'");
+$kodok = mysqli_fetch_array($data);
+
+$nama = $kodok['nama_icu'];
+$file = $kodok['file'];
+$deskripsi = $kodok['deskripsi'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +55,7 @@ include "koneksi.php";
                             <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
                             <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
                         </ul>
-                    <li class="dropdown"><a href="#"><span>Layanan Unggulan</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
                             <li><a href="rawat_inap.php">Rawat Inap</a></li>
@@ -80,43 +88,25 @@ include "koneksi.php";
             <div class="container">
                 <div class="row mt-5 justify-content-center" data-aos="fade-up">
                     <div class="col-lg-10">
-                        <H4>Input loker</H4>
-                        <form action="input_karir_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
-                            <p>Nama loker</p>
+                        <H4>Layanan</H4>
+                        <form action="layanan_icu_act.php" method="post" class="php-email-form" enctype="multipart/form-data">
+                            <input type="hidden" name="layanan_id" value="<?php echo $_GET['id'] ?>">
+                            <p>Nama layanan</p>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="nama_karir">
+                                <input type="text" class="form-control" name="nama_icu" value="<?php echo $nama ?>">
                             </div>
                             <p>Upload File</p>
                             <div class="form-group mt-3">
-                                <input type="file" class="form-control" name="file">
+                                <input type="file" class="form-control" name="file" onchange="loadingsih()">
                             </div>
-                            <div class="text-center"><button type="submit" name="insert">upload</button></div>
-                            <br>
-                            <div class="mt-5">
-                                <table id="example" class="display cell-border" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>id karir</th>
-                                            <th>nama loker</th>
-                                            <th>file</th>
-                                            <th>action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $query = mysqli_query($conn, "SELECT * FROM karir");
-                                        while ($row = mysqli_fetch_array($query)) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $row['karir_id'] ?></td>
-                                                <td><?php echo $row['nama_loker'] ?></td>
-                                                <td><img src="karir/<?php echo $row['file'] ?>" width="150px" height="100px"></td>
-                                                <td><a href="input_medical_checkup_act.php?id=<?php echo $row['mcu_id'] ?>" class="btn btn-danger">Hapus</a></td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                            <div class="form-group mt-3">
+                                <img src="icu/<?php echo $file ?>" width="150px" height="100px">
                             </div>
+                            <p>Deskripsi</p>
+                            <div class="form-group mt-3">
+                                <textarea name="deskripsi" class="form-control" value="<?php echo $deskripsi ?>"></textarea>
+                            </div>
+                            <div class="text-center"><button type="submit" name="update">upload</button></div>
                         </form>
                     </div>
                 </div>
@@ -124,6 +114,39 @@ include "koneksi.php";
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-body text-center">
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-success" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-danger" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-warning" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-info" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="spinner-grow text-dark" role="status">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -140,6 +163,17 @@ include "koneksi.php";
         $(document).ready(function() {
             $('#example').DataTable();
         });
+
+        var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
+            keyboard: false
+        });
+
+        function loadingsih() {
+            myModal.show();
+            setTimeout(function() {
+                myModal.hide();
+            }, 5000);
+        }
     </script>
 
     <!-- Template Main JS File -->

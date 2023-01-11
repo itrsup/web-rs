@@ -47,13 +47,13 @@ include "koneksi.php";
                             <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
                             <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
                         </ul>
-                    <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Layanan Unggulan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
                             <li><a href="rawat_inap.php">Rawat Inap</a></li>
                             <li><a href="medical_checkup.php">Medical Check Up</a></li>
                             <li><a href="igd.php">IGD</a></li>
-                            <li><a href="#">ICU</a></li>
+                            <li><a href="icu.php">ICU</a></li>
                             <li><a href="hemodialisa.php">Hemodialisa</a></li>
                             <li><a href="radiologi.php">Radiologi</a></li>
                             <li><a href="laboratorium.php">Laboratorium</a></li>
@@ -118,7 +118,6 @@ include "koneksi.php";
                                 <div class="tab-pane <?php echo ($i == 1 ? "active" : "") ?> show" id="tab-<?php echo $i ?>">
                                     <figure>
                                         <img src="igd/<?php echo $row['file'] ?>" width="600px" height="400px">
-                                        <h5><?php echo $row['nama_igd'] ?></h5><br>
                                         <br>
                                         <div>
                                             <h6><strong>Deskripsi</strong></h6>

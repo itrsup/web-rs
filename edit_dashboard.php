@@ -54,7 +54,7 @@ $file = $kodok['file'];
                             <li><a href="pasien_dan_pengunjung.php">Tata Tertib & Waktu Berkunjung</a></li>
                             <li><a href="hak _pasien_dan_keluarga.php">Hak & Kewajiban Pasien Dan Keluarga Pasien</a></li>
                         </ul>
-                    <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Layanan Unggulan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="rawat_jalan.php">Rawat Jalan</a></li>
                             <li><a href="rawat_inap.php">Rawat Inap</a></li>
